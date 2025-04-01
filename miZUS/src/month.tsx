@@ -259,7 +259,7 @@ const Calendar: React.FC = () => {
     
 
     return (
-        <div style={{ padding: '20px' }}>
+        <div style={{ maxWidth: '100%', padding: '0px' }}>
             <h1>Hodiny za {new Intl.DateTimeFormat('sk-SK', { month: 'long' }).format(new Date(2025, monthNumber - 1))}</h1>
 
             <button 

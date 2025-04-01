@@ -24,7 +24,7 @@ function HomePage() {
   );
 
   return (
-    <div>
+    <div style={{padding: '0px', maxWidth: '100%'}}>
       <p>{welcomeText}</p>
       <NavButtons />
     </div>

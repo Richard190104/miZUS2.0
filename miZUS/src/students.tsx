@@ -74,7 +74,7 @@ export const PupilsPage: React.FC = () => {
     };
 
     return (
-        <div style={{ padding: '20px' }}>
+        <div style={{ maxWidth: '100%'}}>
             <h1>Moji žiaci</h1>
             <button onClick={() => setShowForm(!showForm)}>
                 {showForm ? 'Zrušiť' : 'Pridať Žiaka'}
