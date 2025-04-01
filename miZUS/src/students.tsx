@@ -80,9 +80,9 @@ export const PupilsPage: React.FC = () => {
                 {showForm ? 'Zrušiť' : 'Pridať Žiaka'}
             </button>
             {showForm && (
-                <form onSubmit={handleFormSubmit} style={{ marginTop: '20px' }}>
-                    <div>
-                        <label>
+                <form onSubmit={handleFormSubmit} style={{ marginTop: '20px', width: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row', width: '100%'}}>
+                        <label style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row', width: '100%'}}>
                             Meno a priezvisko:
                             <input
                                 type="text"
@@ -92,8 +92,8 @@ export const PupilsPage: React.FC = () => {
                             />
                         </label>
                     </div>
-                    <div>
-                        <label>
+                    <div style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row', width: '100%'}}>
+                        <label style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row', width: '100%'}}>
                             Deň:
                             <input
                                 type="text"
@@ -103,26 +103,31 @@ export const PupilsPage: React.FC = () => {
                             />
                         </label>
                     </div>
-                    <div>
-                        <label>
+                    <div style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row', width: '100%'}}>
+                        <label style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row', width: '100%'}}>
                             Čas:
                             <input
-                                type="text"
+                                type="time"
                                 value={newStudent.time}
                                 onChange={(e) => setNewStudent({ ...newStudent, time: e.target.value })}
                                 required
                             />
                         </label>
                     </div>
-                    <div>
-                        <label>
+                    <div style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row', width: '100%'}}>
+                        <label style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row', width: '100%'}}>
                             Trvanie:
-                            <input
-                                type="text"
+                            <select
                                 value={newStudent.duration}
                                 onChange={(e) => setNewStudent({ ...newStudent, duration: e.target.value })}
                                 required
-                            />
+                            >
+                                <option value="" disabled>Vyberte trvanie</option>
+                                <option value="30 min">30 min</option>
+                                <option value="45 min">45 min</option>
+                                <option value="60 min">60 min</option>
+                                <option value="90 min">90 min</option>
+                            </select>
                         </label>
                     </div>
                     <button type="submit">Pridať</button>

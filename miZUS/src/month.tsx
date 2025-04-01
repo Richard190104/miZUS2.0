@@ -278,8 +278,8 @@ const Calendar: React.FC = () => {
                     }} 
                     style={{ marginBottom: '20px', border: '1px solid #ddd', padding: '20px', borderRadius: '5px' }}
                 >
-                    <div style={{ marginBottom: '10px' }}>
-                        <label>Žiak: </label>
+                    <div style={{ marginBottom: '10px',  display: 'flex', justifyContent: 'space-between', flexDirection: 'row', width: '100%' }}>
+                        <label style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row', width: '100%'}}>Žiak: </label>
                         <select
                             value={newLesson.person}
                             onChange={(e) => {
@@ -307,8 +307,8 @@ const Calendar: React.FC = () => {
                             ))}
                         </select>
                     </div>
-                    <div style={{ marginBottom: '10px' }}>
-                        <label>Deň: </label>
+                    <div style={{ marginBottom: '10px', display: 'flex', justifyContent: 'space-between', flexDirection: 'row', width: '100%' }}>
+                        <label style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row', width: '100%'}}>Deň: </label>
                         <select
                             value={newLesson.day}
                             onChange={(e) => {
@@ -331,8 +331,8 @@ const Calendar: React.FC = () => {
                         </select>
                     </div>
                     <div style={{ marginBottom: '10px' }}></div>
-                    <div style={{ marginBottom: '10px' }}>
-                        <label>Začiatok: </label>
+                    <div style={{ marginBottom: '10px', display: 'flex', justifyContent: 'space-between', flexDirection: 'row', width: '100%' }}> 
+                        <label style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row', width: '100%'}}>Začiatok: </label>
                         <input 
                             type="text" 
                             value={newLesson.time} 
@@ -341,8 +341,8 @@ const Calendar: React.FC = () => {
                         />
                     </div>
 
-                    <div style={{ marginBottom: '10px' }}>
-                        <label>Trvanie: </label>
+                    <div style={{ marginBottom: '10px', display: 'flex', justifyContent: 'space-between', flexDirection: 'row', width: '100%' }}>
+                        <label style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row', width: '100%'}}>Trvanie: </label>
                         <input 
                             type="text" 
                             value={newLesson.duration} 
@@ -352,7 +352,7 @@ const Calendar: React.FC = () => {
                     </div>
 
                     <div style={{ marginBottom: '10px' }}>
-                        <label>
+                        <label >
                             <input 
                                 type="checkbox" 
                                 onChange={(e) => {
@@ -369,7 +369,7 @@ const Calendar: React.FC = () => {
                         </label>
                         {newLesson.substitute !== '' && (
                             <div style={{ marginTop: '10px' }}>
-                                <label>Pôvodný dátum hodiny: </label>
+                                <label >Pôvodný dátum hodiny: </label>
                                 <input 
                                     type="date" 
                                     value={newLesson.substitute || ''} 
