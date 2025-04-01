@@ -38,7 +38,7 @@ function App() {
       <Route path="/students" element={<StudentsPage />} />
       <Route path="/calendar" element={<Calendar/>} />
       <Route path="/month" element={<Month />} />
-      <Route path="*" element={<div>404 - Stránka neexistuje</div>} />
+      <Route path="*" element={<HomePage />} />
     </Routes>
   );
 }
