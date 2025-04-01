@@ -48,7 +48,8 @@ const WelcomeText = [
     "Nech je dnešok naplnený len dobrou energiou! 💕",
     "Tvoje šťastie je pre mňa najväčšou radosťou! 😍",
     "Nech je dnešný deň taký výnimočný ako ty! ✨",
-    "Maj nádherný deň plný lásky a radosti! ❤️"
+    "Maj nádherný deň plný lásky a radosti! ❤️",
+    "pup"
   ];
   
   export default WelcomeText;
