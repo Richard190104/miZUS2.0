@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import ExcelJS from 'exceljs';
 import { saveAs } from 'file-saver'; 
 
@@ -44,7 +44,6 @@ interface Student {
 }
 
 const Calendar: React.FC = () => {
-    const navigate = useNavigate();
     const location = useLocation();
     const [lessons, setLessons] = useState<Lesson[]>([]);
     const [showForm, setShowForm] = useState(false);
@@ -165,7 +164,7 @@ const Calendar: React.FC = () => {
 
         Object.entries(weeks).forEach(([weekNumber, weekLessons]) => {
             worksheet.addRow(headers); // Add headers for each week
-
+            console.log(weekNumber)
             const headerRow = worksheet.lastRow;
             if (headerRow) {
                 headerRow.eachCell(cell => {
@@ -288,10 +287,7 @@ const Calendar: React.FC = () => {
                             onChange={(e) => {
                                 const selectedPupil = pupils.find(pupil => pupil.name === e.target.value);
                                 if (selectedPupil) {
-                                    const [hours, minutes] = selectedPupil.time.split(':').map(Number);
-                                    const [durationHours, durationMinutes] = selectedPupil.duration.split(':').map(Number);
-                                    const endHours = hours + durationHours + Math.floor((minutes + durationMinutes) / 60);
-                                    const endMinutes = (minutes + durationMinutes) % 60;
+
                                     
                                     setNewLesson({
                                         ...newLesson,
