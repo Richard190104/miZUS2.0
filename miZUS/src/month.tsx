@@ -268,9 +268,7 @@ const Calendar: React.FC = () => {
             >
                 {showForm ? 'Zrušiť' : 'Pridať hodinu'}
             </button>
-            <button onClick={exportToExcel}>
-                Exportovať
-            </button>
+          
 
             {showForm && (
                 <form 
@@ -448,6 +446,9 @@ const Calendar: React.FC = () => {
                                     ))}
                                 </tbody>
                             </table>
+                            <button onClick={exportToExcel}>
+                                Exportovať
+                            </button>
                         </div>
                     ))
                 ) : (

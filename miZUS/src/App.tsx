@@ -38,14 +38,14 @@ function App() {
       <Route path="/students" element={<StudentsPage />} />
       <Route path="/calendar" element={<Calendar/>} />
       <Route path="/month" element={<Month />} />
-      <Route path="*" element={<HomePage />} />
+      <Route path="*" element={<div>404 - Stránka neexistuje</div>} />
     </Routes>
   );
 }
 
 function AppWrapper() {
   return (
-    <Router>
+    <Router  basename="/miZUS2.0">
       <App />
     </Router>
   );
