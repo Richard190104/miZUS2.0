@@ -74,13 +74,13 @@ export const PupilsPage: React.FC = () => {
     };
 
     return (
-        <div style={{ maxWidth: '100%'}}>
+        <div style={{ maxWidth: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', gap: '10px', flexDirection: 'column' }}>
             <h2>Moji žiaci</h2>
             <button style={{width: '80%'}} onClick={() => setShowForm(!showForm)}>
                 {showForm ? 'Zrušiť' : 'Pridať Žiaka'}
             </button>
             {showForm && (
-                <form onSubmit={handleFormSubmit} style={{ marginTop: '20px', width: '100%', display: 'flex', flexDirection: 'column' }}>
+                <form onSubmit={handleFormSubmit} style={{ marginTop: '20px', padding: '15px', display: 'flex', flexDirection: 'column', gap: '10px', width: '80%' }}>
                     <div style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row', width: '100%'}}>
                         <label style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row', width: '100%'}}>
                             Meno a priezvisko:

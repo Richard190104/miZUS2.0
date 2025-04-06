@@ -12,11 +12,11 @@ const Calendar: React.FC = () => {
     const currentMonthIndex = new Date().getMonth();
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column',  maxWidth: '100%' }}>
+        <div style={{  flexDirection: 'column',  maxWidth: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', gap: '10px' }}>
             {months.map((month, index) => {
-                let backgroundColor = 'red';
+                let backgroundColor = 'crimson';
                 if (index === currentMonthIndex) {
-                    backgroundColor = 'green';
+                    backgroundColor = 'coral';
                 } else if (index < currentMonthIndex) {
                     backgroundColor = 'gray';
                 }

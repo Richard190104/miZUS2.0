@@ -259,12 +259,12 @@ const Calendar: React.FC = () => {
     
 
     return (
-        <div style={{ maxWidth: '100%', padding: '0px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
+        <div style={{ maxWidth: '100%', padding: '50px 0px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
             <h2>Hodiny za {new Intl.DateTimeFormat('sk-SK', { month: 'long' }).format(new Date(2025, monthNumber - 1))}</h2>
 
             <button 
                 onClick={() => setShowForm(!showForm)} 
-                style={{ marginBottom: '20px', padding: '10px 20px', backgroundColor: 'green', color: 'white', border: 'none', cursor: 'pointer', width: '80%' }}
+                style={{ marginBottom: '20px', padding: '10px 20px', backgroundColor: 'crimson', color: 'white', border: 'none', cursor: 'pointer', width: '50%' }}
             >
                 {showForm ? 'Zrušiť' : 'Pridať hodinu'}
             </button>
@@ -382,7 +382,7 @@ const Calendar: React.FC = () => {
 
                     <button 
                         type="submit" 
-                        style={{ padding: '10px 20px', backgroundColor: 'blue', color: 'white', border: 'none', cursor: 'pointer' }}
+                        style={{ padding: '10px 20px', backgroundColor: 'crimson', color: 'white', border: 'none', cursor: 'pointer' }}
                     >
                         Potvrdiť
                     </button>
@@ -406,8 +406,8 @@ const Calendar: React.FC = () => {
                                 return acc;
                             }, {} as Record<string, Lesson[]>)
                     ).map(([day, dayLessons]) => (
-                        <div key={day} style={{ marginBottom: '20px' }}>
-                            <h3 style={{ marginBottom: '10px' }}>{day}</h3>
+                        <div key={day} style={{ marginBottom: '20px', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+                            <h3 style={{ marginBottom: '10px', color: 'hotpink'}}>{day}</h3>
                             <table style={{ maxWidth: '70%', borderCollapse: 'collapse' }}>
                                 <thead>
                                     <tr>
@@ -454,7 +454,7 @@ const Calendar: React.FC = () => {
                         Tento mesiac neboli žiadne hodiny
                     </div>
                 )}
-                <button onClick={exportToExcel}>
+                <button style={{backgroundColor: 'purple'}} onClick={exportToExcel}>
                                 Exportovať
                 </button>
             </div>
