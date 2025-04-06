@@ -76,7 +76,7 @@ export const PupilsPage: React.FC = () => {
     return (
         <div style={{ maxWidth: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', gap: '10px', flexDirection: 'column' }}>
             <h2>Moji žiaci</h2>
-            <button style={{width: '80%'}} onClick={() => setShowForm(!showForm)}>
+            <button style={{width: '80%', color:  'white'}} onClick={() => setShowForm(!showForm)}>
                 {showForm ? 'Zrušiť' : 'Pridať Žiaka'}
             </button>
             {showForm && (
@@ -130,7 +130,7 @@ export const PupilsPage: React.FC = () => {
                             </select>
                         </label>
                     </div>
-                    <button type="submit">Pridať</button>
+                    <button style={{color:  'white'}} type="submit">Pridať</button>
                 </form>
             )}
            <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '20px' }}>

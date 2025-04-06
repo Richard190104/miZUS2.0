@@ -454,7 +454,7 @@ const Calendar: React.FC = () => {
                         Tento mesiac neboli žiadne hodiny
                     </div>
                 )}
-                <button style={{backgroundColor: 'purple'}} onClick={exportToExcel}>
+                <button style={{backgroundColor: 'purple', color: 'white'}} onClick={exportToExcel}>
                                 Exportovať
                 </button>
             </div>

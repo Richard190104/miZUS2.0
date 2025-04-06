@@ -12,8 +12,8 @@ function NavButtons() {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center' }}>
-      <button onClick={() => navigate('/students')}>Moji žiaci</button>
-      <button onClick={() => navigate('/calendar')}>Kalendár</button>
+      <button style={{color:  'white'}} onClick={() => navigate('/students')}>Moji žiaci</button>
+      <button style={{color:  'white'}} onClick={() => navigate('/calendar')}>Kalendár</button>
     </div>
   );
 }
