@@ -259,12 +259,12 @@ const Calendar: React.FC = () => {
     
 
     return (
-        <div style={{ maxWidth: '100%', padding: '0px' }}>
-            <h1>Hodiny za {new Intl.DateTimeFormat('sk-SK', { month: 'long' }).format(new Date(2025, monthNumber - 1))}</h1>
+        <div style={{ maxWidth: '100%', padding: '0px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
+            <h2>Hodiny za {new Intl.DateTimeFormat('sk-SK', { month: 'long' }).format(new Date(2025, monthNumber - 1))}</h2>
 
             <button 
                 onClick={() => setShowForm(!showForm)} 
-                style={{ marginBottom: '20px', padding: '10px 20px', backgroundColor: 'green', color: 'white', border: 'none', cursor: 'pointer' }}
+                style={{ marginBottom: '20px', padding: '10px 20px', backgroundColor: 'green', color: 'white', border: 'none', cursor: 'pointer', width: '80%' }}
             >
                 {showForm ? 'Zrušiť' : 'Pridať hodinu'}
             </button>
@@ -389,7 +389,7 @@ const Calendar: React.FC = () => {
                 </form>
             )}
 
-            <div style={{ overflowX: 'auto', maxWidth: '100%' }}>
+            <div style={{ overflowX: 'auto', maxWidth: '100%', width: '90%' }}>
                 {lessons.length > 0 ? (
                     Object.entries(
                         lessons
@@ -408,26 +408,26 @@ const Calendar: React.FC = () => {
                     ).map(([day, dayLessons]) => (
                         <div key={day} style={{ marginBottom: '20px' }}>
                             <h3 style={{ marginBottom: '10px' }}>{day}</h3>
-                            <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                            <table style={{ maxWidth: '70%', borderCollapse: 'collapse' }}>
                                 <thead>
                                     <tr>
-                                        <th style={{ padding: '8px' }}>Mesiac</th>
-                                        <th style={{ padding: '8px' }}>Žiak</th>
-                                        <th style={{ padding: '8px' }}>Čas</th>
-                                        <th style={{ padding: '8px' }}>Trvanie</th>
-                                        <th style={{ padding: '8px' }}>Náhradný termín</th>
-                                        <th style={{ padding: '8px' }}></th>
+                                        <th style={{ padding: '4px'}}>Mesiac</th>
+                                        <th style={{ padding: '4px' }}>Žiak</th>
+                                        <th style={{ padding: '4px' }}>Čas</th>
+                                        <th style={{ padding: '4px' }}>Trvanie</th>
+                                        <th style={{ padding: '4px' }}>Náhradný termín</th>
+                                        <th style={{ padding: '4px' }}></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {dayLessons.map((lesson) => (
                                         <tr key={lesson.id}>
-                                            <td style={{ padding: '8px' }}>{lesson.month}</td>
-                                            <td style={{ padding: '8px' }}>{lesson.person}</td>
-                                            <td style={{ padding: '8px' }}>{lesson.time}</td>
-                                            <td style={{ padding: '8px' }}>{lesson.duration}</td>
-                                            <td style={{ padding: '8px' }}>{lesson.substitute || '—'}</td>
-                                            <td style={{ padding: '8px' }}>
+                                            <td style={{ padding: '4px' }}>{lesson.month}</td>
+                                            <td style={{ padding: '4px' }}>{lesson.person}</td>
+                                            <td style={{ padding: '4px' }}>{lesson.time}</td>
+                                            <td style={{ padding: '4px' }}>{lesson.duration}</td>
+                                            <td style={{ padding: '4px' }}>{lesson.substitute || '—'}</td>
+                                            <td style={{ padding: '4px' }}>
                                                 <button
                                                     onClick={() => removeLesson(lesson.id)}
                                                     style={{
@@ -446,9 +446,7 @@ const Calendar: React.FC = () => {
                                     ))}
                                 </tbody>
                             </table>
-                            <button onClick={exportToExcel}>
-                                Exportovať
-                            </button>
+                            
                         </div>
                     ))
                 ) : (
@@ -456,6 +454,9 @@ const Calendar: React.FC = () => {
                         Tento mesiac neboli žiadne hodiny
                     </div>
                 )}
+                <button onClick={exportToExcel}>
+                                Exportovať
+                </button>
             </div>
         </div>
     );

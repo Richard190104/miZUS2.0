@@ -75,8 +75,8 @@ export const PupilsPage: React.FC = () => {
 
     return (
         <div style={{ maxWidth: '100%'}}>
-            <h1>Moji žiaci</h1>
-            <button onClick={() => setShowForm(!showForm)}>
+            <h2>Moji žiaci</h2>
+            <button style={{width: '80%'}} onClick={() => setShowForm(!showForm)}>
                 {showForm ? 'Zrušiť' : 'Pridať Žiaka'}
             </button>
             {showForm && (
